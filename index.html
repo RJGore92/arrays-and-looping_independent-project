@@ -45,14 +45,30 @@
           <ul>
             <li>Once the program is reached on the next slide, the user will be prompted to enter a number.  This input slot is required for the program to run and will not accept values that are not numbers (i.e. text), nor will it accept numbers less than zero.  Blank input fields, non-number inputs, and negative number inputs will result in the program requesting for a proper input with numeric value of zero or greater.</li>
             <li>Should a valid numeric input be found, the program creates an array of numbers starting at zero, incrementing by one, and proceeding to expand the array until the target number is reached.</li>
-            <li>The program will then proceed to change numbers based on the specs above, highest priority changes first before working to change the numbers to the lower priority specs.  Details about this are listed on the previous slide.  If the user needs examples, click <button type="button" id="revert-to-first" onclick="onClickOne()">here</button> to go back.</li>
+            <li>The program will then proceed to change numbers based on the specs above, highest priority changes first before working to change the numbers to the lower priority specs.  Details about this are listed on the previous slide.  If the user needs examples, click <button type="button" id="revert-back" onclick="onClickOne()">here</button> to go back.</li>
             <li>The array, once changed by the program scripts to where all specs are met within it, will be displayed in a visible list, and the user input form will be temporarily hidden unless the user wishes to input another number or reset the form for the next person.</li>
           </ul>
         </div>
-        <p>When the user is ready, click <button type="button" id="proceed-to-program" onclick="">this button</button> to begin.</p>
+        <p>When the user is ready, click <button type="button" id="proceed-to-program" onclick="onClickTwo()">this button</button> to begin.</p>
       </div>
       <div id="primary-program-div">
-        <h1>test</h1>
+        <h1>Beep Boop!</h1>
+        <div id="form-div-in">
+          <p>Greetings, organic life form.  Please input a number below in the input box.  The number must be greater than or equal to zero.  When ready, please press the button beneath.</p>
+          <p>If you are not ready and need to review any of the information about this program, its functionality, examples, or about the author, press <button type="button" id="revert-to-first-a" onclick="onClickThree()">here</button> to go back to the first slide, or <button type="button" id="revert-to-second" onclick="onClickTwo()">here</button> to go back to the second intro slide. </p>
+          <form id="form-in">
+            <input type="number" id="number-in" value="0" min="0" required>
+            <button type="submit" class="btn">Submit this number.</button>
+          </form>
+        </div>
+        <div id="form-div-out">
+          <ul id="output-list">
+
+          </ul>
+          <div class="sidenav-to-return">
+            <p>To the left is your generated list based on how the program functions.  To start with a new number, click <button type="button" id="new-number" onclick="onClickFour()">here</button>.  To go back to the beginning, click <button type="button" id="revert-to-first-b" onclick="onClickFive()">here</button>.</p>
+          </div>
+        </div>
       </div>
     </div>
   </body>

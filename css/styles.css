@@ -1,4 +1,8 @@
-#intro-div-two {
+#intro-div-two, #primary-program-div, #form-div-out {
+  display: none;
+}
+
+.sidenav-to-return {
   display: none;
 }
 
@@ -6,4 +10,13 @@
   height: 200px;
   width: auto;
   margin-right: 15px;
+}
+
+.sidenav-to-return {
+  width: 400px;
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  right: 15px;
+  padding: 8px 0;
 }
