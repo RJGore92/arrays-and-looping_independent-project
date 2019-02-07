@@ -33,9 +33,29 @@ No known bugs are present in this project.
 
 ####  Inputs and outputs (examples):
 
-* User Input: 5, expected output: "'Beep!', 'Boop!', 2, 'I'm sorry, Dave, I'm afraid I can't do that.', 4, 5".
-* User Input: 10, output expected includes the above plus the following: "'I'm sorry Dave, I'm afraid I can't do that', 7, 8, 'I'm sorry Dave, I'm afraid I can't do that', 'Boop!'"
-* User Input: 20, output expected includes the above output ranges plus the following: "'Boop!', 'I'm sorry Dave, I'm afraid I can't do that', 'Boop!', 'Boop!', 'I'm sorry Dave, I'm afraid I can't do that', 'Boop!', 'Boop!', 'I'm sorry Dave, I'm afraid I can't do that', 'Boop!', 'Beep!'"
+* Program rejects non-numbers:
+  * Input: "I"
+  * Expected output: "false" (program build prevents non-number inputs in form)
+* Program rejects negative numbers and non-integers:
+  * Input: -5 or 0.3
+  * Expected output: "false" (program build prevents negative inputs or decimal inputs in form)
+* Program accepts positive integers and zero.  No upper cap detected in testing for failure.
+  * Program converts any number with zero to "Beep" if the criteria below are also not met.
+    * Input examples: 0, 20, 40, 50
+    * Outputs of specific numbers: "Beep"
+  * Numbers with 1 in them are converted to "Boop", even if the number contains a zero.  This criteria is overridden by the criteria below
+    * Input examples: 1, 10, 31
+    * Output of specific numbers: "Boop"
+  * Numbers evenly divisible by three that are not zero are replaced with "I'm sorry, Dave.  I'm afraid I can't do that."  This overrides the two criteria above.
+    * Input examples: 3, 30, 81
+    * Output of specific numbers: "I'm sorry, Dave.  I'm afraid I can't do that."
+  * Any number that does not meet the three main behaviors above return their original values.
+    * Input examples: 2, 4, 2327
+    * Expected outputs of specific numbers: 2, 4, 2327
+* Below are limited-range full outputs of the program based on based on the following user inputs.
+  * User Input: 5, expected output: "'Beep!', 'Boop!', 2, 'I'm sorry, Dave, I'm afraid I can't do that.', 4, 5".
+  * User Input: 10, output expected includes the above plus the following: "'I'm sorry Dave, I'm afraid I can't do that', 7, 8, 'I'm sorry Dave, I'm afraid I can't do that', 'Boop!'"
+  * User Input: 20, output expected includes the above output ranges plus the following: "'Boop!', 'I'm sorry Dave, I'm afraid I can't do that', 'Boop!', 'Boop!', 'I'm sorry Dave, I'm afraid I can't do that', 'Boop!', 'Boop!', 'I'm sorry Dave, I'm afraid I can't do that', 'Boop!', 'Beep!'"
 
 ## Technologies Used
 
