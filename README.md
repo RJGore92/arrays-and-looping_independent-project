@@ -6,7 +6,7 @@
 
 ## Description
 
-The primary purpose of this site is to establish a basic portfolio-quality program and site under the guidelines established by Epicodus's end-of-unit project for Arrays and Looping, utilizing various tools and functionality introduced through Epicodus Intro to Programming Unit Two in addition to assets and skills learned from units one and two.  It acts as a comprehensive review of all elements and units taught during the first three units of Epicodus's tracks.
+The primary purpose of this site is to establish a basic portfolio-quality program and site under the guidelines established by Epicodus's end-of-unit project for Arrays and Looping, utilizing various tools and functionality introduced through Epicodus Intro to Programming Unit Three in addition to assets and skills learned from units one and two.  It acts as a comprehensive review of all elements and units taught during the first three units of Epicodus's tracks.
 
 ## Setup/Installation Requirements
 
@@ -21,14 +21,21 @@ No known bugs are present in this project.
 
 ## Assignment Specs
 
-1. The project starts out by requesting an input string.  This string has no limit in how long it can be, but requires at least a single character within it to convert to a puzzle (requires the input field to not be empty).
-2. The project then converts the string into an aray, and using a nested for loop and an array variable of vowels, determines which characters in the string are vowels, soon removing them and replacing a hyphen "-" in their position.  Vowels are tracked in uppercase and lowercase.
-3. Once the array string has been completely converted to a puzzle, the program then rejoins the text and outputs it into the HTML as the encrypted puzzle.
+1. The program requires an input of a number of zero or greater.  Attempting to input a string into the input shows nothing, and trying to submit a number less than zero prevents the submit and informs the user of this.  (Inputs will not accept non-numbers, and numbers less than zero will not submit)
+2. Once a number of zero or greater is submitted, the program will create a list (array) of numbers starting at zero and working up to the target number that was input. (An input of 5 returns a list of zero through 5 (0, 1, 2, 3, 4, 5) and so on if the number is greater.)
+3. Next, the program will look at the array and begin changing the listed numbers based on the following criteria below.  Note that the order of such is written in lowest priority to highest.
+    * Any numbers that do not meet the below criteria are left unchanged in the returned list.
+    * Numbers that have a zero in them at any point replace the entire entry of that number with "Beep!"  The number zero is also accounted under this spec.  (Other numbers include 20, 40, and 50 for examples, and each will be replaced with "Beep!")
+    * Numbers that have a one in them at any point override change behavior spec immediately above this one, instead replacing the entire number with "Boop!"  Sample numbers where this change occurs include 1, 10, 100, 13, and more.
+    * Any instance where a number in the list greater than zero is divisible completely by three with no remainder overrides the previous two change criteria and change such numbers to return the phrase "I'm sorry, Dave.  I'm afraid I can't do that."  Example numbers that incur this change are 3, 9, 12, 18, 21, 30, and many more.
+4. When the entire array is converted according to the specs above, the program prints the list in the output div assigned by the scripts.  See below for limited examples of input and output ranges.
+
 
 ####  Inputs and outputs (examples):
 
-* Input: "test this", output: "t-st th-s".
-* Input: "Hello, my name is Jimmy.", output: "H-ll-, my n-m- -s J-mmy."
+* User Input: 5, expected output: "'Beep!', 'Boop!', 2, 'I'm sorry, Dave, I'm afraid I can't do that.', 4, 5".
+* User Input: 10, output expected includes the above plus the following: "'I'm sorry Dave, I'm afraid I can't do that', 7, 8, 'I'm sorry Dave, I'm afraid I can't do that', 'Boop!'"
+* User Input: 20, output expected includes the above output ranges plus the following: "'Boop!', 'I'm sorry Dave, I'm afraid I can't do that', 'Boop!', 'Boop!', 'I'm sorry Dave, I'm afraid I can't do that', 'Boop!', 'Boop!', 'I'm sorry Dave, I'm afraid I can't do that', 'Boop!', 'Beep!'"
 
 ## Technologies Used
 
