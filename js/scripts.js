@@ -25,6 +25,10 @@ function converterOfNumbers(inputArray) {
           continue checkToConvert;
         }
         else if (numberSplit[j] == 0) {
+          if (numberSplit[j+1] == 1 && j != numberSplit.length) {
+            postConvertedArray.push("Boop!");
+            continue checkToConvert;
+          }
           postConvertedArray.push("Beep!");
           continue checkToConvert;
         }
